@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io"
 	"os"
+	"strconv"
 	"strings"
 )
 
@@ -47,4 +48,39 @@ func ReadLinesNoTrim(path string) []string {
 	}
 
 	return input
+}
+
+func ReadIntMatrix(in []string) [][]int {
+	mtx := make([][]int, len(in))
+	for i, l := range in {
+		newLine := make([]int, len(l))
+		for j, c := range l {
+			value, _ := strconv.Atoi(string(c))
+			newLine[j] = value
+		}
+		mtx[i] = newLine
+	}
+	return mtx
+}
+
+func PrintIntMtx(in [][]int) {
+	for i := range in {
+		for j := range in[i] {
+			fmt.Printf("%d", in[i][j])
+		}
+		fmt.Printf("\n")
+	}
+}
+
+func PrintBollMtx(in [][]bool) {
+	for i := range in {
+		for j := range in[i] {
+			var v int
+			if in[i][j] {
+				v = 1
+			}
+			fmt.Printf("%d", v)
+		}
+		fmt.Printf("\n")
+	}
 }
