@@ -11,11 +11,12 @@ import (
 	"github.com/saulomarx/AoC2022/days/day06"
 	"github.com/saulomarx/AoC2022/days/day07"
 	"github.com/saulomarx/AoC2022/days/day08"
+	"github.com/saulomarx/AoC2022/days/day09"
 	"github.com/saulomarx/AoC2022/utils"
 )
 
 func main() {
-	workingDay := 8
+	workingDay := 9
 
 	switch workingDay {
 	case 1:
@@ -34,6 +35,8 @@ func main() {
 		runsDay07()
 	case 8:
 		runsDay08()
+	case 9:
+		runsDay09()
 	default:
 		fmt.Println("not today")
 	}
@@ -95,4 +98,12 @@ func runsDay08() {
 	input := utils.ReadLines(p)
 	day08.Part01(input)
 	day08.Part02(input)
+}
+
+func runsDay09() {
+	p := "./days/day09/inputs/in01.txt"
+	p = "./days/day09/inputs/example.txt"
+	input := utils.ReadLines(p)
+	day09.Part01(input)
+	day09.Part02(input)
 }
